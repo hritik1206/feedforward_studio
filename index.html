@@ -692,20 +692,23 @@
           <p>Send us a few details and we'll get back to you, usually within a day or two.</p>
           <p class="talk">Prefer not to use the form? Reach us directly:</p>
           <div class="contact-row" style="margin-top:.9rem">
-            <a class="btn btn--ghost" href="mailto:studio@feedforward.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email us</a>
+            <a class="btn btn--ghost" href="mailto:studio.feedforward@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email us</a>
             <a class="btn btn--ghost" href="tel:+918955619273"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
           </div>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="b7bf926e-1bdc-4d30-943b-33ecf2f8ff04">
           <label class="field"><span>Your name</span><input type="text" name="name" required autocomplete="name"></label>
           <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
           <label class="field"><span>What do you create or sell?</span><input type="text" name="what" placeholder="e.g. travel reels, a skincare brand, a cafe" autocomplete="off"></label>
           <label class="field"><span>Your message</span><textarea name="message" rows="4" required placeholder="Tell us a bit about your goals"></textarea></label>
-          <input type="hidden" name="_subject" value="New enquiry from the FeedForward Studio website">
-          <input type="hidden" name="_next" value="https://feedforwardstudio.com/thanks.html">
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <input type="hidden" name="subject" value="New enquiry from the FeedForward Studio website">
+          <input type="hidden" name="from_name" value="FeedForward Studio website">
+          <!-- When your domain is live, uncomment the next line so submits land on your branded thank-you page:
+          <input type="hidden" name="redirect" value="https://feedforwardstudio.com/thanks.html"> -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <button class="btn btn--signal" type="submit">Send message <span class="arw" aria-hidden="true">→</span></button>
-          <p class="form-note">We'll never share your details. (Form delivery needs the site hosted plus a free form endpoint, see the setup note.)</p>
+          <p class="form-note">We'll never share your details.</p>
         </form>
       </div>
       <div class="next reveal s1">
@@ -723,7 +726,7 @@
       <p class="sub">Your next post is a chance to move things forward. Reach out on Instagram, by email, or by phone, whichever's easiest for you.</p>
       <div class="contact-row">
         <a class="btn btn--signal" href="https://www.instagram.com/feedforward.studio/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg> Message on Instagram <span class="arw" aria-hidden="true">→</span></a>
-        <a class="btn btn--ghost" href="mailto:studio@feedforward.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email us</a>
+        <a class="btn btn--ghost" href="mailto:studio.feedforward@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email us</a>
         <a class="btn btn--ghost" href="tel:+918955619273"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
       </div>
     </div>
@@ -750,7 +753,7 @@
       </div>
       <div class="meta">
         <a href="https://www.instagram.com/feedforward.studio/" target="_blank" rel="noopener">@feedforward.studio</a><br>
-        <a href="mailto:studio@feedforward.com">studio@feedforward.com</a><br>
+        <a href="mailto:studio.feedforward@gmail.com">studio@feedforward.com</a><br>
         <a href="tel:+918955619273">+91&nbsp;89556&nbsp;19273</a><br>
         <a href="privacy.html">Privacy Policy</a><br>
         <span id="yearLine">© FeedForward Studio</span>
