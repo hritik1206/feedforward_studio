@@ -337,7 +337,7 @@
           "@type" : "Question",
           "acceptedAnswer" : {
             "@type" : "Answer",
-            "text" : "FeedForward Studio is based in Bengaluru (Bangalore), Karnataka, and works with clients across India. We shoot on location around Bengaluru, while editing, strategy, account management and ads work just as well remotely, over calls and messages."
+            "text" : "FeedForward Studio is based in Bengaluru (Bangalore), Karnataka, and takes on clients from anywhere in India. We shoot on location around Bengaluru, while editing, strategy, account management and ads work just as well remotely, over calls and messages."
           },
           "name" : "Where are you based, and do you work with clients outside Bengaluru?"
         },
@@ -345,7 +345,7 @@
           "@type" : "Question",
           "acceptedAnswer" : {
             "@type" : "Answer",
-            "text" : "FeedForward Studio tailors every plan to what you need, so pricing depends on things like how much content you want each month, whether we shoot on location, and whether you want posting, comment replies or paid ads included. Tell us your goals through the contact form or on WhatsApp and we'll send a quote, usually within a day or two."
+            "text" : "FeedForward Studio tailors every plan to what you need, so pricing depends on things like how much content you want each month, whether we shoot on location, and whether you want posting, comment replies or paid ads included. Tell us your goals through the contact form or on WhatsApp and we'll get back to you, usually within a day or two, to talk through a quote."
           },
           "name" : "How much does FeedForward Studio cost?"
         },
@@ -353,7 +353,7 @@
           "@type" : "Question",
           "acceptedAnswer" : {
             "@type" : "Answer",
-            "text" : "The Feed Map is FeedForward Studio's content calendar: a weekly or monthly plan of what to post and when, built around your goals. We build it with you step by step, so you always know what's coming next. See an example Feed Map."
+            "text" : "The Feed Map is FeedForward Studio's content calendar: a weekly or monthly plan of what to post and when, built around your goals. We build it with you step by step, so you always know what's coming next. You can see an example Feed Map in the How we work section."
           },
           "name" : "What is The Feed Map?"
         },
@@ -1006,7 +1006,7 @@
         </article>
       </div>
       <div class="svc-foot reveal">
-        <p>We work on Instagram and YouTube today, with more platforms on the way. Every plan is tailored to what you need, so tell us your goals and we'll send a quote, usually within a day or two.</p>
+        <p>We work on Instagram and YouTube today, with more platforms on the way. Every plan is tailored to what you need, so tell us your goals and we'll get back to you, usually within a day or two, to talk through a quote.</p>
         <a class="btn btn--signal" href="#start">Get a quote <span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
@@ -1114,7 +1114,7 @@
         </div>
         <div class="where reveal s1">
           <p class="eyebrow">Where we work</p>
-          <h3>Based in Bengaluru, working across India</h3>
+          <h3>Based in Bengaluru, open to clients across India</h3>
           <p>We shoot on location around Bengaluru. Editing, content strategy, account management and ads work just as well remotely, so we take on clients anywhere in India.</p>
           <p>Planning and reviews happen over calls and messages, in whichever language you're most comfortable with.</p>
         </div>
@@ -1202,15 +1202,15 @@
         </details>
         <details class="q">
           <summary><span class="qn">Q3</span><span class="qt">Where are you based, and do you work with clients outside Bengaluru?</span><span class="pm" aria-hidden="true"></span></summary>
-          <div class="ans"><p>FeedForward Studio is based in Bengaluru (Bangalore), Karnataka, and works with clients across India. We shoot on location around Bengaluru, while editing, strategy, account management and ads work just as well remotely, over calls and messages.</p></div>
+          <div class="ans"><p>FeedForward Studio is based in Bengaluru (Bangalore), Karnataka, and takes on clients from anywhere in India. We shoot on location around Bengaluru, while editing, strategy, account management and ads work just as well remotely, over calls and messages.</p></div>
         </details>
         <details class="q">
           <summary><span class="qn">Q4</span><span class="qt">How much does FeedForward Studio cost?</span><span class="pm" aria-hidden="true"></span></summary>
-          <div class="ans"><p>FeedForward Studio tailors every plan to what you need, so pricing depends on things like how much content you want each month, whether we shoot on location, and whether you want posting, comment replies or paid ads included. Tell us your goals through the <a href="#start">contact form</a> or on <a href="https://wa.me/918955619273?text=Hi%20FeedForward%20Studio!%20I%27d%20like%20to%20know%20more%20about%20working%20with%20you." target="_blank" rel="noopener">WhatsApp</a> and we'll send a quote, usually within a day or two.</p></div>
+          <div class="ans"><p>FeedForward Studio tailors every plan to what you need, so pricing depends on things like how much content you want each month, whether we shoot on location, and whether you want posting, comment replies or paid ads included. Tell us your goals through the <a href="#start">contact form</a> or on <a href="https://wa.me/918955619273?text=Hi%20FeedForward%20Studio!%20I%27d%20like%20to%20know%20more%20about%20working%20with%20you." target="_blank" rel="noopener">WhatsApp</a> and we'll get back to you, usually within a day or two, to talk through a quote.</p></div>
         </details>
         <details class="q">
           <summary><span class="qn">Q5</span><span class="qt">What is The Feed Map?</span><span class="pm" aria-hidden="true"></span></summary>
-          <div class="ans"><p>The Feed Map is FeedForward Studio's content calendar: a weekly or monthly plan of what to post and when, built around your goals. We build it with you step by step, so you always know what's coming next. <a href="#feed-map">See an example Feed Map</a>.</p></div>
+          <div class="ans"><p>The Feed Map is FeedForward Studio's content calendar: a weekly or monthly plan of what to post and when, built around your goals. We build it with you step by step, so you always know what's coming next. You can <a href="#feed-map">see an example Feed Map</a> in the How we work section.</p></div>
         </details>
         <details class="q">
           <summary><span class="qn">Q6</span><span class="qt">Do you shoot and edit Instagram Reels and YouTube Shorts?</span><span class="pm" aria-hidden="true"></span></summary>
@@ -1398,6 +1398,7 @@
       var el = hash && hash.length > 1 && document.getElementById(hash.slice(1));
       if (!el) return null;
       if (hash === '#feed-map') document.getElementById('rt-map').checked = true;
+      if (el.tagName === 'MAIN') return el; /* skip link / brand link: nothing to pre-reveal */
       var targets = [].slice.call(el.querySelectorAll('.reveal')), r = el.closest('.reveal');
       if (r) targets.push(r);
       targets.forEach(function (t) {
