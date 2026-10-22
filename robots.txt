@@ -1,5 +1,3 @@
-# robots.txt for FeedForward Studio
-# TODO: replace feedforwardstudio.com with your real domain once you have one
 User-agent: *
 Allow: /
 

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('ffs-theme'); } catch (e) {}
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+  gtag('consent', 'default', { analytics_storage: 'denied', region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'] });
+  gtag('js', new Date());
+  gtag('config', 'G-J1JB6H7JRK');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1JB6H7JRK"></script>
+<title>Thanks for reaching out | FeedForward Studio</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<style>
+  :root{--paper:#F4EFE6;--ink:#17140F;--muted:#6B6356;--signal:#7C2FE0;}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141210;--ink:#F4EFE6;--muted:#A79C8C;--signal:#9D6BFF;}}
+  :root[data-theme="dark"]{--paper:#141210;--ink:#F4EFE6;--muted:#A79C8C;--signal:#9D6BFF;}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;display:grid;place-items:center;text-align:center;padding:2rem}
+  .wrap{max-width:34rem}
+  .mark{display:block;margin:0 auto 1.4rem;height:84px;width:auto}
+  h1{font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;font-weight:800;font-size:clamp(1.8rem,6vw,2.8rem);margin:0 0 1rem;letter-spacing:-.02em;line-height:1.1}
+  p{color:var(--muted);font-size:1.08rem;line-height:1.6;margin:0 0 2rem}
+  .row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;font-weight:700;text-decoration:none;background:var(--signal);color:#fff;padding:.8em 1.4em;border-radius:999px;border:1px solid var(--signal);transition:transform .18s ease}
+  .btn--ghost{background:transparent;color:var(--ink);border-color:var(--muted)}
+  :root[data-theme="dark"] .btn:not(.btn--ghost){color:#141210}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn:not(.btn--ghost){color:#141210}}
+  .btn:hover{transform:translateY(-2px)}
+  a:focus-visible{outline:2.5px solid var(--signal);outline-offset:3px;border-radius:8px}
+  @media (prefers-reduced-motion: reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="mark" src="/img/rocket-mark.webp" alt="" width="57" height="112">
+    <h1>Thanks! Your message is on its way.</h1>
+    <p>We'll get back to you within a day or two. In the meantime, take a look at what we've been making on Instagram.</p>
+    <div class="row">
+      <a class="btn" href="https://www.instagram.com/feedforward.studio/" target="_blank" rel="noopener">See @feedforward.studio →</a>
+      <a class="btn btn--ghost" href="/">← Back to home</a>
+    </div>
+  </main>
+</body>
+</html>

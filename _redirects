@@ -1,0 +1,11 @@
+# old duplicate copy of the site
+/site                        /               301!
+/site/privacy.html           /privacy        301!
+/site/privacy                /privacy        301!
+/site/*                      /               301!
+# repo-only / private files that must never be served (they are also gitignored)
+/README.md                   /404.html       404!
+/.gitignore                  /404.html       404!
+/github-recovery-codes.txt   /404.html       404!
+/FFS_Context.txt             /404.html       404!
+/FFS_Logo.jpeg               /img/logo.webp  301!

@@ -1,0 +1,13 @@
+# private working files: never commit (Netlify publishes the repo root)
+*.xlsx
+*.xls
+*.csv
+*.docx
+*.pdf
+*.txt
+!robots.txt
+github-recovery-codes*
+FFS_Context*
+FFS_Rocket.PNG
+.DS_Store
+Thumbs.db
