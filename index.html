@@ -185,7 +185,8 @@
   :root[data-theme="dark"] .icon-btn .moon, :root:not([data-theme]):has(#theme-switch:checked) .icon-btn .moon { display: none; }
   .theme-switch { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .theme-switch:focus-visible ~ .icon-btn { outline: 2.5px solid var(--signal); outline-offset: 3px; }
-  :root:not(.js) label[for="theme-switch"] { display: none; }
+  /* no-JS dark mode (checkbox only): swap the hero logo with CSS since the picture source is script-driven */
+  :root:not([data-theme]):has(#theme-switch:checked) .hero-logo-img { content: url("/img/logo-dark.webp"); }
 
   .btn { display: inline-flex; align-items: center; gap: .5em; font-family: var(--sans); font-weight: 700;
     font-size: .92rem; letter-spacing: -0.01em; text-decoration: none; cursor: pointer;
@@ -323,7 +324,7 @@
   .field span { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
   .field input { width: 100%; font-family: var(--serif); font-size: 1rem; color: var(--ink);
     background: var(--paper); border: 1px solid var(--field-line); border-radius: 10px; padding: .7rem .85rem; }
-  .field input:focus { outline: none; border-color: var(--signal); box-shadow: 0 0 0 3px var(--signal-soft); }
+  .field input:focus { outline: 2px solid var(--signal); outline-offset: 2px; border-color: var(--signal); box-shadow: none; }
   .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 1; }
   .preview { font-family: var(--mono); font-size: .82rem; line-height: 1.7; color: var(--ink);
     background: var(--paper); border: 1px dashed var(--hair); border-radius: 12px; padding: 1rem; white-space: pre-wrap; min-height: 7rem; }
@@ -467,6 +468,8 @@
 
   a:focus-visible, summary:focus-visible, .btn:focus-visible, .icon-btn:focus-visible, input:focus-visible, textarea:focus-visible, .ticker-toggle:focus-visible {
     outline: 2.5px solid var(--signal); outline-offset: 3px; border-radius: 6px; }
+  /* on the dark bands the brand purple is under 3:1, so use the band ink */
+  .ticker-wrap :focus-visible, .ig-band :focus-visible, .cta :focus-visible, .founder :focus-visible { outline-color: var(--band-ink); }
   main:focus { outline: none; }
 
   @media (prefers-reduced-motion: reduce) {
@@ -493,7 +496,7 @@
   }
 
   .field textarea { width: 100%; font-family: var(--serif); font-size: 1rem; color: var(--ink); background: var(--paper); border: 1px solid var(--field-line); border-radius: 10px; padding: .7rem .85rem; resize: vertical; min-height: 5.5rem; }
-  .field textarea:focus { outline: none; border-color: var(--signal); box-shadow: 0 0 0 3px var(--signal-soft); }
+  .field textarea:focus { outline: 2px solid var(--signal); outline-offset: 2px; border-color: var(--signal); box-shadow: none; }
   .contact-form .btn { margin-top: .5rem; }
   .contact-form .btn[disabled] { opacity: .65; cursor: progress; transform: none; }
   .form-note { font-size: .78rem; color: var(--muted); margin: .7rem 0 0; }
@@ -571,7 +574,7 @@
 
   <section class="hero">
     <div class="wrap hero-inner">
-      <div class="hero-logo rise d1"><picture><source id="hero-logo-dark" srcset="/img/logo-dark.webp" media="(prefers-color-scheme: dark)" width="720" height="534"><img class="hero-logo-img" src="/img/logo.webp" alt="FeedForward Studio logo" width="720" height="534" fetchpriority="high" decoding="async"></picture></div>
+      <div class="hero-logo rise d1"><picture><source id="hero-logo-dark" srcset="/img/logo-dark.webp" media="not all" width="720" height="534"><img class="hero-logo-img" src="/img/logo.webp" alt="FeedForward Studio logo" width="720" height="534" fetchpriority="high" decoding="async"></picture></div>
       <script>document.getElementById('hero-logo-dark').media = document.documentElement.getAttribute('data-theme') === 'dark' ? 'all' : 'not all';</script>
       <p class="eyebrow rise d2">Social media studio · Bengaluru, IN</p>
       <h1 class="rise d3">Social content that moves your brand <span class="fwd">forward.</span></h1>
@@ -905,7 +908,6 @@
     tickBtn.addEventListener('click', function () {
       var paused = tickBand.classList.toggle('is-paused');
       tickBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
-      tickBtn.setAttribute('aria-label', paused ? 'Play scrolling banner' : 'Pause scrolling banner');
     });
 
     /* ---- FAQ links open the FAQ tab ---- */
@@ -954,7 +956,11 @@
             statusEl.className = 'form-status err';
             statusEl.innerHTML = 'Sorry, that didn’t send. Please try again, or email us at <a href="mailto:studio.feedforward@gmail.com">studio.feedforward@gmail.com</a>.';
           })
-          .then(function () { btn.disabled = false; btn.innerHTML = label; });
+          .then(function () {
+            btn.disabled = false; btn.innerHTML = label;
+            /* disabling the button drops focus to <body>; give it back */
+            if (!document.activeElement || document.activeElement === document.body) btn.focus();
+          });
       });
     }
 
